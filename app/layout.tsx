@@ -1,7 +1,7 @@
 
 "use client";
 
-import "./globals.css";
+import "./global.css";
 import { useState } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import NavigationPanel from "@/components/NavigationPanel";
