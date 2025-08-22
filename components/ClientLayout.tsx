@@ -10,8 +10,8 @@ import { ArrowLeftToLine, ArrowRightToLine } from "lucide-react";
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  let currentMenu: any = null;
+type SidebarMenu = (typeof sidebarMenus)[keyof typeof sidebarMenus];
+  let currentMenu: SidebarMenu | null = null;
   if (pathname.startsWith("/home")) currentMenu = sidebarMenus.home;
   else if (pathname.startsWith("/documents")) currentMenu = sidebarMenus.document;
   else if (pathname.startsWith("/users")) currentMenu = sidebarMenus.users;

@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import NavigationPanel from "@/components/NavigationPanel";
 import ClientLayout from "@/components/ClientLayout";
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
