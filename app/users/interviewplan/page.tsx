@@ -1,4 +1,3 @@
-
 "use client";
 
 import "./globals.css";
@@ -20,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   if (pathname.startsWith("/home")) currentMenu = sidebarMenus.home;
   else if (pathname.startsWith("/documents")) currentMenu = sidebarMenus.document;
   else if (pathname.startsWith("/users")) currentMenu = sidebarMenus.users;
-  else if (pathname.startsWith("/seetings")) currentMenu = sidebarMenus.seeting;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="h-screen flex bg-gray-100 dark:bg-gray-900">
@@ -46,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className={`absolute top-5 z-50 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-full p-1 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300
-                  ${isSidebarOpen ? "left-56 -ml-3" : "left-2 -ml-3"}`}
+                  ${isSidebarOpen ? "left-56 -ml-3" : "left-16 -ml-3"}`}
               >
                 {isSidebarOpen ? (
                   <ArrowLeftToLine className="text-foreground" size={18} />
