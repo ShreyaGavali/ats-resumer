@@ -12,8 +12,8 @@ export default function NavigationPanel() {
         <div className="items flex flex-col gap-6 mt-3 ml-3">
           <Link href="/home"><Home /></Link>
           <Link href="/users"><Users /></Link>
-          <Link href="/documents"><ClipboardList /></Link>
-          <Link href="/seetings"><Settings /></Link>
+          <Link href="/document"><ClipboardList /></Link>
+          <Link href="/seeting"><Settings /></Link>
         </div>
     </div>
   );

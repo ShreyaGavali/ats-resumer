@@ -13,9 +13,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 type SidebarMenu = (typeof sidebarMenus)[keyof typeof sidebarMenus];
   let currentMenu: SidebarMenu | null = null;
   if (pathname.startsWith("/home")) currentMenu = sidebarMenus.home;
-  else if (pathname.startsWith("/documents")) currentMenu = sidebarMenus.document;
+  else if (pathname.startsWith("/document")) currentMenu = sidebarMenus.document;
   else if (pathname.startsWith("/users")) currentMenu = sidebarMenus.users;
-  else if (pathname.startsWith("/settings")) currentMenu = sidebarMenus.seeting; // typo fix: settings
+  else if (pathname.startsWith("/seeting")) currentMenu = sidebarMenus.seeting; // typo fix: settings
 
   return (
     <div className="flex flex-1 relative">

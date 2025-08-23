@@ -34,16 +34,16 @@ export const sidebarMenus = {
     { label: "Reporting", href: "/users/reporting", icon: AlignEndHorizontal },
   ],
   document: [
-    {label: "My Document", href: "/documents/mydocument", icon: AlignEndHorizontal},
-    {label: "Shared Files", href: "/documents/sharedfiles", icon: AlignEndHorizontal},
-    {label: "Recent File", href: "/documents/recentfile", icon: AlignEndHorizontal},
-    {label: "Upload New", href: "/documents/upload", icon: AlignEndHorizontal},
-    {label: "Trash", href: "/documents/trash", icon: AlignEndHorizontal},
-    {label: "Cloud Storage", href: "/documents/cloudstorage", icon: AlignEndHorizontal}
+    {label: "My Document", href: "/document/mydocument", icon: AlignEndHorizontal},
+    {label: "Shared Files", href: "/document/sharedfiles", icon: AlignEndHorizontal},
+    {label: "Recent File", href: "/document/recentfile", icon: AlignEndHorizontal},
+    {label: "Upload New", href: "/document/upload", icon: AlignEndHorizontal},
+    {label: "Trash", href: "/document/trash", icon: AlignEndHorizontal},
+    {label: "Cloud Storage", href: "/document/cloudstorage", icon: AlignEndHorizontal}
   ],
   seeting: [
-    {label: "My Profile", href: "/settings/myprofile", icon: AlignEndHorizontal},
-    {label: "Edit Profile", href: "/settings/editprofile", icon: AlignEndHorizontal},
-    {label: "Logout", href: "/settings/logout", icon: AlignEndHorizontal},
+    {label: "My Profile", href: "/seeting/myprofile", icon: AlignEndHorizontal},
+    {label: "Edit Profile", href: "/seeting/editprofile", icon: AlignEndHorizontal},
+    {label: "Logout", href: "/seeting/logout", icon: AlignEndHorizontal},
   ]
 };
