@@ -37,7 +37,7 @@ const NavigationPanel = () => {
     return (
         <div className=' dark:border-gray-600 w-16 h-screen bg-panel flex align-middle flex-col shadow-lg transition-colors duration-200'>
             <div className="logo  bg-background w-13 h-11 ml-2 rounded-2xl">
-                <Image src={logoImg} alt="Logo" className="w-9 h-auto mb-6 ml-2.5 mt-0 flex justify-center align-middle p-1" />
+                <Image src={logoImg} alt="Logo"  width={36} height={36} className="w-9 h-auto mb-6 ml-2.5 mt-0 flex justify-center align-middle p-1" />
             </div>
             <div className="navigation-item m-4">
                 <div  className={`house mb-3 w-10 flex justify-center align-middle p-2 rounded-xl ${borderClasses("/home")}`}>
