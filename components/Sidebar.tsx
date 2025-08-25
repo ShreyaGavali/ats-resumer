@@ -5,7 +5,7 @@ import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Button } from "@/components/ui/button"; // shadcn button
+import { Button } from "@heroui/button"; // shadcn button
 
 interface SidebarProps {
   items: {
