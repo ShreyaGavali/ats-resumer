@@ -1,4 +1,3 @@
-
 "use client";
 
 import { LucideIcon } from "lucide-react";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@heroui/button"; // shadcn button
+import SubMenu from "./SubMenu";
 
 interface SidebarProps {
   items: {
@@ -28,8 +28,8 @@ const Sidebar = ({ items }: SidebarProps) => {
 
   const linkClasses = (path: string) =>
     pathname === path
-      ? "border-2 border-blue-500 text-blue-500 font-semibold"
-      : "text-foreground hover:text-blue-500";
+      ? "bg-gray-100 dark:bg-gray-300 dark:text-black"
+      : "text-foreground hover:bg-white dark:hover:bg-gray-600";
 
   return (
     <div className="h-screen w-58 p-4">
@@ -52,25 +52,24 @@ const Sidebar = ({ items }: SidebarProps) => {
             <div key={item.label} className="relative">
               {/* Parent menu */}
               {item.href ? (
-                <Link href={item.href}>
-                  <Button
-                    variant="ghost"
-                    className={`w-full justify-start gap-2 rounded-xl ${linkClasses(
+                <Button variant="ghost"
+                  className={`w-full justify-start gap-2 rounded-xl hover:bg-white dark:hover:bg-gray-600 dark-text-black ${linkClasses(
                       item.href
                     )}`}
-                  >
+                >
+                  <Link href={item.href} className="flex align-middle justify-center gap-2">
                     {item.icon && <item.icon size={18} />}
                     {item.label}
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               ) : (
                 <Button
                   variant="ghost"
                   onClick={() => toggleMenu(item.label)}
                   className={`w-full justify-start gap-2 rounded-xl border-2 transition-all ${
                     isOpen || pathname.startsWith("/users/candidates")
-                      ? "font-semibold border-blue-500"
-                      : "border-transparent"
+                      ? "bg-gray-100 dark:bg-gray-300 dark:text-black"
+                      : "text-foreground hover:bg-white dark:hover:bg-gray-600"
                   }`}
                 >
                   {item.icon && <item.icon size={18} />}
@@ -78,36 +77,9 @@ const Sidebar = ({ items }: SidebarProps) => {
                 </Button>
               )}
 
-              {/* Children */}
-              {item.children && isOpen && (
-                <div className="ml-4 flex flex-col relative">
-                  {/* Vertical line */}
-                  <div className="absolute top-2 left-0 h-10 border-l-2 text-blue-500 border-blue-500"></div>
-                    {item.children.map((child, index) => (
-                    <Link
-                      key={child.label}
-                      href={child.href}
-                      className={`relative pl-8 py-1 text-sm flex items-center transition-colors
-          ${pathname === child.href
-                          ? "text-blue-500 font-semibold"
-                          : "text-blue-500 hover:text-blue-500"}`}
-                    >
-                    
-                      <svg
-                        className="absolute left-0 top-1 w-7 h-7 text-blue-500"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M0 0 v12 q0 6 6 6 h12" />
-                      </svg>
-                      <div className="mt-2">
-                        {child.label}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+              {/* Submenu */}
+              {item.children && (
+                <SubMenu childrenItems={item.children} isOpen={isOpen} />
               )}
             </div>
           );
@@ -118,3 +90,4 @@ const Sidebar = ({ items }: SidebarProps) => {
 };
 
 export default Sidebar;
+

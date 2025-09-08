@@ -19,7 +19,7 @@ export default function Topbar() {
   const [mounted, setMounted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // 🔥 state for highlighting search bar
+  // state for highlighting search bar
   const [highlight, setHighlight] = useState(false);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Topbar() {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center justify-between bg-topbar border-b h-16">
+    <div className="flex items-center justify-between bg-topbar h-16">
       {/* Left Section: Greeting + Date */}
       <div className="ml-8">
         <p className="font-medium text-foreground">Hi, Sachin</p>
@@ -54,9 +54,9 @@ export default function Topbar() {
 
       {/* Middle + Right */}
       <div className="flex gap-10">
-        {/* 🔎 Search */}
+        {/* Search */}
         <div
-          className={`search flex border-2 border-gray-200 h-10 w-70 align-middle gap-2 rounded-2xl transition-shadow duration-300 
+          className={`search flex border-2 border-gray-300 dark:border-gray-600 h-10 w-70 align-middle gap-2 rounded-2xl transition-shadow duration-300 
           ${highlight ? "shadow-lg shadow-gray-400/50" : ""}`}
         >
           <Input

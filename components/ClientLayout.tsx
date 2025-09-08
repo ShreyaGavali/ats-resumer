@@ -23,7 +23,7 @@ type SidebarMenu = (typeof sidebarMenus)[keyof typeof sidebarMenus];
       <div
         className={`transition-all duration-300 ${
           isSidebarOpen ? "w-56" : "w-0"
-        } overflow-hidden border-r bg-[#f7f9fc] dark:bg-gray-900`}
+        } overflow-hidden bg-gray-200 dark:bg-gray-900`}
       >
         {currentMenu && <Sidebar items={currentMenu} />}
       </div>
@@ -45,10 +45,10 @@ type SidebarMenu = (typeof sidebarMenus)[keyof typeof sidebarMenus];
 
       {/* Main content */}
       <div className="flex-1 flex flex-col">
-        <div className="h-16 border-b bg-white dark:bg-gray-800">
+        <div className="h-16 bg-gray-200 dark:bg-gray-900">
           <Topbar />
         </div>
-        <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto p-6 border rounded-2xl bg-gray-100 dark:bg-[#141414] dark:border-gray-600 border-gray-400 mb-4 mr-4">{children}</main>
       </div>
     </div>
   );
